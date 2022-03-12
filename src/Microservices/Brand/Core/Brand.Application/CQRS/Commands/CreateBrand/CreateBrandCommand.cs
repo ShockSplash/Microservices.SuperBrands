@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Brand.Application.CQRS.Commands.CreateBrand
 {
-    public class CreateBrandCommand : IRequest<ResultResponse<CreateBrandDto>>
+    public class CreateBrandCommand : IRequest<ResultResponse<BrandDto>>
     {
         public string Name { get; set; }
 

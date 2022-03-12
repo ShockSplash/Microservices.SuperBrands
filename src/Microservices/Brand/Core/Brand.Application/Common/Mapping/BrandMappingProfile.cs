@@ -13,8 +13,8 @@ namespace Brand.Application.Common.Mapping
     {
         public BrandMappingProfile()
         {
-            CreateMap<CreateBrandCommand, BrandModel>();
-            CreateMap<CreateBrandDto, BrandModel>();
+            CreateMap<BrandModel, CreateBrandCommand>().ReverseMap();
+            CreateMap<BrandModel, BrandDto>().ReverseMap();
         }
     }
 }

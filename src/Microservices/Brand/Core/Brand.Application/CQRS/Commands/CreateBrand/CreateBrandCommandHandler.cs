@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Brand.Application.CQRS.Commands.CreateBrand
 {
-    public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, ResultResponse<CreateBrandDto>>
+    public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, ResultResponse<BrandDto>>
     {
         private readonly IBrandsDbContext _context;
 
@@ -30,7 +30,7 @@ namespace Brand.Application.CQRS.Commands.CreateBrand
         }
 
 
-        public async Task<ResultResponse<CreateBrandDto>> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
+        public async Task<ResultResponse<BrandDto>> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
         {
             var brand = _mapper.Map<BrandModel>(request);
 
@@ -42,10 +42,10 @@ namespace Brand.Application.CQRS.Commands.CreateBrand
             await _context.Brands.AddAsync(brand, cancellationToken);
             await _context.SaveChangesAsync(cancellationToken);
 
-            return new ResultResponse<CreateBrandDto>
+            return new ResultResponse<BrandDto>
             {
                 Result = "Success",
-                Data = _mapper.Map<CreateBrandDto>(brand)
+                Data = _mapper.Map<BrandDto>(brand)
             };
         }
     }

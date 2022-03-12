@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Brand.Application.CQRS.Commands.CreateBrand
+namespace Brand.Application.CQRS.Queries.GetAllBrands
 {
-    public class CreateBrandDto
+    public class GetBrandsVm
     {
-        public int Id { get; set; }
+        public List<BrandModel> Brands { get; set; }
     }
 }
