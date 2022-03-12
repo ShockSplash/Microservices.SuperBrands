@@ -8,6 +8,8 @@ namespace Brand.Domain.Models
 {
     public class Size
     {
+        public int Id { get; set; }
+
         public string RussianSize { get; set; }
 
         public string BrandSize { get; set; }

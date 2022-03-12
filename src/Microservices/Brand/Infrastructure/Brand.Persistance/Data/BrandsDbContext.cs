@@ -17,11 +17,13 @@ namespace Brand.Persistance.Data
 
         }
 
-        public DbSet<Brands> Brands { get; set; }
+        public DbSet<Domain.Models.BrandModel> Brands { get; set; }
+
+        public DbSet<Size> Sizes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<Brands>(new BrandsConfiguration());
+            modelBuilder.ApplyConfiguration<BrandModel>(new BrandsConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

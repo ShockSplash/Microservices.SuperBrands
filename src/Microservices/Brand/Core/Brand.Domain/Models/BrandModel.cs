@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Brand.Domain.Models
 {
-    public class Brands
+    public class BrandModel
     {
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public List<Size> Sizes { get; set; }
 
-        public Brands()
+        public bool IsDeleted { get; set; }
+
+        public BrandModel()
         {
             Sizes = new List<Size>();
         }
