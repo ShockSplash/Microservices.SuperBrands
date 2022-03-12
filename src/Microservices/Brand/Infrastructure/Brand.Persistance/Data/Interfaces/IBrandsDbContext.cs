@@ -11,7 +11,7 @@ namespace Brand.Persistance.Data.Interfaces
 {
     public interface IBrandsDbContext
     {
-        DbSet<Brands> Brands { get; set; }
+        DbSet<Domain.Models.BrandModel> Brands { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken token);
     }

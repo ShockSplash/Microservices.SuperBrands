@@ -1,4 +1,5 @@
 ﻿using Brand.Persistance.Data;
+using Brand.Persistance.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -14,6 +15,9 @@ namespace Brand.Persistance
         public static void AddPersistace(this IServiceCollection services)
         {
             services.AddDbContext<BrandsDbContext>(options => options.UseInMemoryDatabase("Brands"));
+
+            services.AddScoped<IBrandsDbContext>(provider =>
+                provider.GetService<BrandsDbContext>());
         }
     }
 }
