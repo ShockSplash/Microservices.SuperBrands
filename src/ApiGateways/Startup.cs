@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +33,8 @@ namespace ApiGateways
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiGateways", Version = "v1" });
             });
+
+            services.AddOcelot();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -52,6 +56,8 @@ namespace ApiGateways
             {
                 endpoints.MapControllers();
             });
+
+            app.UseOcelot().Wait();
         }
     }
 }
