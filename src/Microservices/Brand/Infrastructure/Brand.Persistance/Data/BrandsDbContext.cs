@@ -17,7 +17,7 @@ namespace Brand.Persistance.Data
 
         }
 
-        public DbSet<Domain.Models.BrandModel> Brands { get; set; }
+        public DbSet<BrandModel> Brands { get; set; }
 
         public DbSet<Size> Sizes { get; set; }
 

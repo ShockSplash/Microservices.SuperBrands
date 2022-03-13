@@ -30,6 +30,7 @@ namespace Brand.Application.CQRS.Queries.GetAllBrands
         public async Task<ResultResponse<GetBrandsVm>> Handle(GetBrandsQuery request, CancellationToken cancellationToken)
         {
             var brands = await _context.Brands.IgnoreQueryFilters()
+                .Include(b => b.Sizes)
                 .ToListAsync(cancellationToken);
 
             if (brands.Count == 0)
