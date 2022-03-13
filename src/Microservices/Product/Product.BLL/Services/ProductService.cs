@@ -101,7 +101,7 @@ namespace Product.BLL.Services
         {
             using (var client = new HttpClient())
             {
-                var items = await client.GetStringAsync($"https://localhost:44317/api/brand");
+                var items = await client.GetStringAsync($"http://localhost:5000/api/brand");
                 var result = JsonConvert.DeserializeObject<ResultResponse>(items);
                 return result;
             }
