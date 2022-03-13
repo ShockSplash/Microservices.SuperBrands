@@ -11,7 +11,7 @@ namespace Brand.Persistance.FluentApiConfiguration
 {
     public class BrandsConfiguration : IEntityTypeConfiguration<Domain.Models.BrandModel>
     {
-        public void Configure(EntityTypeBuilder<Domain.Models.BrandModel> builder)
+        public void Configure(EntityTypeBuilder<BrandModel> builder)
         {
             builder.Property(builder => builder.Name).HasMaxLength(256);
             builder.Property<bool>("IsDeleted");

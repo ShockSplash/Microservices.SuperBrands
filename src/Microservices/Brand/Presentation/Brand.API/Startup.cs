@@ -48,15 +48,7 @@ namespace Brand.API
 
 
             // cors policy
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll", policy =>
-                {
-                    policy.AllowAnyHeader();
-                    policy.AllowAnyMethod();
-                    policy.AllowAnyOrigin();
-                });
-            });
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -71,8 +63,6 @@ namespace Brand.API
             app.UseMiddleware<CustomExceptionsHandler>();
 
             app.UseHttpsRedirection();
-
-            app.UseCors("AllowAll");
 
             app.UseRouting();
 

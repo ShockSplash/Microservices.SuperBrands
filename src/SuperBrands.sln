@@ -30,17 +30,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brand.Persistance", "Micros
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{00360E56-9352-414C-805A-CFD1C2BE5BF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Brand.API", "Microservices\Brand\Presentation\Brand.API\Brand.API.csproj", "{E0C6B58B-26A4-42C8-9835-B1AE8BF3EB9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Brand.API", "Microservices\Brand\Presentation\Brand.API\Brand.API.csproj", "{E0C6B58B-26A4-42C8-9835-B1AE8BF3EB9A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CD84B7E4-EF97-4784-80FA-8460DAE4F0B1} = {CD84B7E4-EF97-4784-80FA-8460DAE4F0B1}
 		{D48E76F4-8648-4E9C-A78F-0577FE1BC5E7} = {D48E76F4-8648-4E9C-A78F-0577FE1BC5E7}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.BLL", "Microservices\Product\Product.BLL\Product.BLL.csproj", "{A627C9B4-D025-495D-8131-34E9441B1165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.BLL", "Microservices\Product\Product.BLL\Product.BLL.csproj", "{A627C9B4-D025-495D-8131-34E9441B1165}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2850EF54-8054-44FA-B846-A5AA73C2CD53} = {2850EF54-8054-44FA-B846-A5AA73C2CD53}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.DAL", "Microservices\Product\Product.DAL\Product.DAL.csproj", "{2850EF54-8054-44FA-B846-A5AA73C2CD53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.DAL", "Microservices\Product\Product.DAL\Product.DAL.csproj", "{2850EF54-8054-44FA-B846-A5AA73C2CD53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.PL", "Microservices\Product\Product.PL\Product.PL.csproj", "{DD1A3AC3-6100-48D1-8466-E4978B158E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.PL", "Microservices\Product\Product.PL\Product.PL.csproj", "{DD1A3AC3-6100-48D1-8466-E4978B158E0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

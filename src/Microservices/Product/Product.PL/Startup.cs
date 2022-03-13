@@ -7,6 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Product.BLL;
+using Product.BLL.Services;
+using Product.BLL.Services.Interfaces;
+using Product.DAL;
+using Product.PL.Middleware;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +28,6 @@ namespace Product.PL
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -32,9 +36,12 @@ namespace Product.PL
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Product.PL", Version = "v1" });
             });
+
+            services.AddPersistace();
+
+            services.AddTransient<IProductService, ProductService>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -43,6 +50,8 @@ namespace Product.PL
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product.PL v1"));
             }
+
+            app.UseMiddleware<CustomExceptionsHandler>();
 
             app.UseHttpsRedirection();
 
