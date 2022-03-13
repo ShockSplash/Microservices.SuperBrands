@@ -22,7 +22,8 @@ Architecture: 3-layer with anemic model <br>
 <br>
 Implemented API  Gateway using ocelot. <br>
 <br>
-Thing that need to be done:<br>
+Things to do:<br>
 - Unit testing <br>
 - Login service <br>
 - Docker support <br>
+- Documentation
